@@ -65,6 +65,10 @@ of individuals — reported honestly in §4.6 of the report.
 
 ![Conformal intervals](reports/figures/fig7_conformal.png)
 
+A mixed-effects check (subject random intercept) confirms the same picture: the
+ICC is 0.69 for AUC but 0.33 for iAUC, and within a person carbohydrate raises
+while protein lowers the response. Details in §4.7 of the report.
+
 ## External validation (BIG IDEAs)
 
 The frozen CGMacros model is applied, with **no retraining**, to
