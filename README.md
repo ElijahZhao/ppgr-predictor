@@ -119,10 +119,21 @@ shows per-feature TreeSHAP contributions.
 > population-average gamma shape scaled to the predicted peak rise and iAUC, and
 > the UI labels it as a reconstruction rather than a model output.
 
+## Tests
+
+```bash
+python test_app.py
+```
+
+Boots `app.py` headlessly with Streamlit's own `AppTest` harness, presses
+**Predict**, and asserts that the three scalar predictions and the TreeSHAP
+panel render without exceptions — no server and no network required.
+
 ## Repository layout
 
 ```
 app.py                Streamlit demo
+test_app.py           headless AppTest smoke test for the demo
 inference.py          model loading, prediction, TreeSHAP, curve reconstruction
 model/                trained boosters + preprocessing metadata
 assets/               bundled results for the external-validation panel
