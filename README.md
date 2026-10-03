@@ -7,6 +7,10 @@ Trained on [CGMacros](https://physionet.org/content/cgmacros/1.0.0/) (45 subject
 1,557 meals) and validated **leave-one-subject-out (LOPO)** — every prediction is
 made for a person the model has never seen.
 
+**Live demo:** <https://metanutri-ai-ppgr-predictor.streamlit.app/> ·
+**Parent platform (full-stack project):** <https://meta-nutri-ai.vercel.app/> ·
+source [`MetaNutri---AI-`](https://github.com/ElijahZhao/MetaNutri---AI-)
+
 ## What this repository is (and is not)
 
 This repo is the **demo half** of a two-repository project. The parent repository,
