@@ -155,13 +155,18 @@ inference.py          model loading, prediction, TreeSHAP, curve reconstruction
 model/                trained boosters + preprocessing metadata
 assets/               bundled results for the external-validation panel
 requirements.txt      demo dependencies (pinned)
-src/                  training, evaluation and figure code
-reports/              technical report + figures
-experiments/          LOPO results table + external-validation results
+src/                  provenance copy of the parent's research/src/
+reports/              provenance copy of the parent's research/reports/
+experiments/          provenance copy of the parent's research/experiments/
 data/README.md        data provenance and download instructions
 ```
 
-To retrain:
+The `src/`, `reports/` and `experiments/` trees (and `data/README.md`) are a
+**provenance copy** of the parent repo's
+[`research/`](https://github.com/ElijahZhao/MetaNutri---AI-/tree/main/research)
+module — kept so every number here can be traced to the code that produced it.
+Retraining is always run **in the parent**, from its `research/` directory; the
+commands below assume that layout:
 
 ```bash
 bash src/run_all.sh --skip-download   # data → results → figures → PDF, one command
