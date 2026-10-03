@@ -116,6 +116,12 @@ data/README.md        data provenance and download instructions
 To retrain:
 
 ```bash
+bash src/run_all.sh --skip-download   # data → results → figures → PDF, one command
+```
+
+or run the steps individually:
+
+```bash
 python src/download_data.py      # fetch CGMacros (~627 MB)
 python src/build_dataset.py      # build the meal-level dataset
 python src/experiment.py         # run the LOPO suite
