@@ -1,5 +1,18 @@
 # PPGR Predictor
 
+<div align="center">
+
+**Postprandial glucose-response (PPGR) prediction — XGBoost + leave-one-subject-out validation**
+
+[![Live demo](https://img.shields.io/badge/Live_demo-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://metanutri-ai-ppgr-predictor.streamlit.app/)
+[![CI](https://github.com/ElijahZhao/ppgr-predictor/actions/workflows/ci.yml/badge.svg)](https://github.com/ElijahZhao/ppgr-predictor/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![XGBoost](https://img.shields.io/badge/XGBoost-3.4-EB6E4B?style=for-the-badge)](https://xgboost.readthedocs.io/)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey?style=for-the-badge)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![Parent repo](https://img.shields.io/badge/Parent-MetaNutri--AI--10b981?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ElijahZhao/MetaNutri---AI-)
+
+</div>
+
 Predicting the **2-hour postprandial glucose response (PPGR)** to a meal from its
 macronutrient composition plus a handful of subject-level clinical features.
 
