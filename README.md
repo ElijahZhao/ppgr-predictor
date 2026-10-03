@@ -49,6 +49,16 @@ extension to lunch, dinner and snacks.
 
 ![Model comparison](reports/figures/fig2_model_comparison.png)
 
+A pooled correlation mixes two questions. Splitting it into **within-subject**
+(does the model rank a person's own meals correctly?) and **between-subject**
+(does it recover *who* responds more?) skill shows that AUC's high pooled *r* is
+driven mainly by the between-subject component, whereas iAUC's two components
+are nearly equal — making iAUC the more genuinely meal-level signal. Median-split
+ROC-AUC ranges 0.74–0.96 across targets. Full details in §4.5 of the
+[technical report](reports/technical_report.pdf).
+
+![Within- and between-subject skill](reports/figures/fig6_within_between.png)
+
 ## External validation (BIG IDEAs)
 
 The frozen CGMacros model is applied, with **no retraining**, to
