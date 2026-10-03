@@ -25,6 +25,28 @@ extension to lunch, dinner and snacks.
 
 ![Model comparison](reports/figures/fig2_model_comparison.png)
 
+## External validation (BIG IDEAs)
+
+The frozen CGMacros model is applied, with **no retraining**, to
+[BIG IDEAs](https://physionet.org/content/big-ideas-glycemic-wearable/1.1.2/)
+(16 subjects, 656 meals — a different CGM device, Dexcom G6, and free-living
+food logs), using only the five features shared by both datasets.
+
+| Protocol (5 shared features) | 2-h iAUC *r* | 2-h AUC *r* | Peak *r* |
+|---|---|---|---|
+| CGMacros (LOPO, internal) | 0.49 | 0.82 | 0.51 |
+| BIG IDEAs (LOPO, internal) | 0.46 | 0.63 | 0.48 |
+| **BIG IDEAs (external transfer)** | **0.23** | **0.57** | **0.22** |
+| BIG IDEAs (external, carb-only Ridge) | 0.36 | 0.29 | 0.36 |
+
+AUC transfers partially, but iAUC and peak rise collapse — and a
+carbohydrate-only Ridge regression transfers *better* on those two targets. The
+BIG IDEAs internal LOPO row shows the drop is a shift between cohorts, not noise
+in the external data. The demo exposes this read-only panel under
+"Does it generalise to another cohort?".
+
+![External validation](reports/figures/fig5_external_validation.png)
+
 ## How it works
 
 - **Features** — meal: carbohydrate / protein / fat / fiber (g), meal-time glucose.
@@ -59,10 +81,11 @@ shows per-feature TreeSHAP contributions.
 app.py                Streamlit demo
 inference.py          model loading, prediction, TreeSHAP, curve reconstruction
 model/                trained boosters + preprocessing metadata
+assets/               bundled results for the external-validation panel
 requirements.txt      demo dependencies (pinned)
 src/                  training, evaluation and figure code
 reports/              technical report + figures
-experiments/          LOPO results table
+experiments/          LOPO results table + external-validation results
 data/README.md        data provenance and download instructions
 ```
 
@@ -83,12 +106,20 @@ DOI [10.13026/3z8q-x658](https://doi.org/10.13026/3z8q-x658), licensed
 fetches it. Models derived from it are distributed under the same license, with
 attribution to the original authors.
 
+External validation uses
+[BIG IDEAs](https://physionet.org/content/big-ideas-glycemic-wearable/1.1.2/) —
+PhysioNet, DOI [10.13026/zthx-5212](https://doi.org/10.13026/zthx-5212), licensed
+**ODC-By 1.0** (attribution).
+
 ## Limitations
 
 - Small cohort (45 subjects) with a narrow demographic range; held-out
   performance on unseen subjects is much lower than within-subject performance.
 - iAUC is substantially harder to predict than AUC — AUC is dominated by a
   person's overall glucose level, while iAUC isolates the meal-driven excursion.
+- **External validation is modest**: AUC transfers across cohorts (r ≈ 0.57),
+  but iAUC and peak rise do not (r ≈ 0.22), and a carb-only baseline transfers
+  better on those two targets.
 - The illustrative curve is a visual aid and is **not** a validated forecast of
   the response shape.
 - **Not a medical device.** Research and portfolio use only.
