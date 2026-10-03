@@ -59,6 +59,12 @@ ROC-AUC ranges 0.74–0.96 across targets. Full details in §4.5 of the
 
 ![Within- and between-subject skill](reports/figures/fig6_within_between.png)
 
+Predictions also carry **conformal intervals**. Their marginal coverage matches
+nominal (0.800 / 0.898), but the intervals are wide and under-cover a minority
+of individuals — reported honestly in §4.6 of the report.
+
+![Conformal intervals](reports/figures/fig7_conformal.png)
+
 ## External validation (BIG IDEAs)
 
 The frozen CGMacros model is applied, with **no retraining**, to
