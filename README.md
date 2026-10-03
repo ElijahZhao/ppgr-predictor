@@ -7,6 +7,30 @@ Trained on [CGMacros](https://physionet.org/content/cgmacros/1.0.0/) (45 subject
 1,557 meals) and validated **leave-one-subject-out (LOPO)** — every prediction is
 made for a person the model has never seen.
 
+## What this repository is (and is not)
+
+This repo is the **demo half** of a two-repository project. The parent repository,
+[`MetaNutri---AI-`](https://github.com/ElijahZhao/MetaNutri---AI-), holds the full
+project: a full-stack platform *and* the `research/` module where the models below
+were trained and evaluated. This repo holds only what the deployed demo needs.
+
+- **It is** the deployment target for Streamlit Community Cloud — self-contained
+  (`app.py` + `requirements.txt` at the root, ~690 KB), with models exported as
+  **JSON** so no training stack is needed at runtime.
+- **It is not** a submodule, a fork, or a mirror of the parent repo, and it is
+  **never edited independently** — it is regenerated from the parent.
+- **Flow is one way:** `MetaNutri---AI-` → this repo. Nothing flows back.
+- **They do not interact at runtime:** no API calls, no shared package, no data
+  exchange. The app loads the exported boosters and predicts locally.
+- **Why not a submodule:** Streamlit Community Cloud builds the *repository root*
+  and expects `app.py` there; a submodule would add a checkout step and a failure
+  mode to that build without removing the need for this curated subset.
+
+**Source of truth.** Every number in this README (results, external validation,
+figures) is generated from the parent repo's `research/experiments/*.csv` and must
+match its [technical report](reports/technical_report.pdf). If the two disagree,
+the parent repository wins and this repo is regenerated.
+
 ## Results (LOPO, Pearson *r*)
 
 | Target | Breakfast only (n=423) | All meals (n=1,557) |
