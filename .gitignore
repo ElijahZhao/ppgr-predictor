@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.env
+.streamlit/secrets.toml
+
+# Dataset is never committed (CGMacros raw is ~627 MB); see data/README.md
+data/raw/
+data/interim/
+data/processed/
+
+.DS_Store
+.idea/
+.vscode/
