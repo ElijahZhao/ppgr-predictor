@@ -206,3 +206,5 @@ PhysioNet, DOI [10.13026/zthx-5212](https://doi.org/10.13026/zthx-5212), license
 - The illustrative curve is a visual aid and is **not** a validated forecast of
   the response shape.
 - **Not a medical device.** Research and portfolio use only.
+
+**Development note.** AI coding tools were used as assistants while this project and its parent repository were implemented — chiefly for scaffolding, refactoring and documentation. The research design, experiments, evaluation and final review are the author's own, and AI-generated output was reviewed and adapted before being merged rather than accepted as-is.
