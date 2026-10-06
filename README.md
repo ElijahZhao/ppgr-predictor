@@ -32,7 +32,7 @@ project: a full-stack platform *and* the `research/` module where the models bel
 were trained and evaluated. This repo holds only what the deployed demo needs.
 
 - **It is** the deployment target for Streamlit Community Cloud — self-contained
-  (`app.py` + `requirements.txt` at the root, ~690 KB), with models exported as
+  (`app.py` + `requirements.txt` at the root, ~2.3 MB), with models exported as
   **JSON** so no training stack is needed at runtime.
 - **It is not** a submodule, a fork, or a mirror of the parent repo, and it is
   **never edited independently** — it is regenerated from the parent.
